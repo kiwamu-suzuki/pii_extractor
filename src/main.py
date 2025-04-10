@@ -12,6 +12,11 @@ from src.extractor.merger import merge_results
 # FastAPI アプリ初期化
 app = FastAPI()
 
+# ロギングの設定
+import logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
 # 抽出器の初期化
 presidio_default = PresidioDefaultExtractor()
 presidio_custom = PresidioCustomExtractor()
@@ -25,6 +30,7 @@ class AnalyzeRequest(BaseModel):
 
 @app.post("/analyze")
 def analyze_text(request: AnalyzeRequest):
+    logger.info("analyze_text called")
     text = request.text
 
     # 各抽出器でPIIを検出
