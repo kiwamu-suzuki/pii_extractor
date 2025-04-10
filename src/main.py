@@ -47,6 +47,7 @@ def analyze_text(request: AnalyzeRequest):
 
 @app.post("/anonymize")
 def anonymize_text(request: AnalyzeRequest):
+    print("anonymize_text called")
     text = request.text
 
     # 各抽出器で検出
