@@ -29,8 +29,7 @@ class AnalyzeRequest(BaseModel):
 
 @app.post("/analyze")
 def analyze_text(request: AnalyzeRequest):
-    logger.warning("Input: %s", request.text[:50])  # ← WARNING は不自然
-
+    logger.info("Input: %s", request.text[:50])  # Changed to INFO for appropriate log level
     text = request.text
 
     # 同じ処理の繰り返し（Copilot が関数にまとめろと言いそう）
