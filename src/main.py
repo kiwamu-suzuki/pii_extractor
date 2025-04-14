@@ -77,4 +77,4 @@ def anonymize_text(request: AnalyzeRequest):
 
 logger.info("Done")
 
-// ここで FastAPI アプリを起動する
+# ここで FastAPI アプリを起動する
