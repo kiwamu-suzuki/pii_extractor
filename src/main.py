@@ -30,7 +30,6 @@ class AnalyzeRequest(BaseModel):
 
 @app.post("/analyze")
 def analyze_text(request: AnalyzeRequest):
-    print("analyze_text called with input:", request.text[:50] + ("..." if len(request.text) > 50 else ""))
     logger.info("analyze_text called with input: %s", request.text[:50] + ("..." if len(request.text) > 50 else ""))
     text = request.text
 
