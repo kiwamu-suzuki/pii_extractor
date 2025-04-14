@@ -81,4 +81,4 @@ from typing import List  # ← 未使用
 def add(a, b):
     return a + b  # Direct arithmetic operation
 
-print("Done")
+logger.info("Done")
