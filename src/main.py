@@ -30,7 +30,7 @@ class AnalyzeRequest(BaseModel):
 
 @app.post("/analyze")
 def analyze_text(request: AnalyzeRequest):
-    logger.info("analyze_text called")
+    logger.info("analyze_text called with input: %s", request.text[:50] + ("..." if len(request.text) > 50 else ""))
     text = request.text
 
     # 各抽出器でPIIを検出
@@ -43,12 +43,14 @@ def analyze_text(request: AnalyzeRequest):
         presidio_default_output, presidio_custom_output, spacy_output
     )
 
-    return {
+    response = {
         "presidio": presidio_default_output,
         "presidio_custom": presidio_custom_output,
         "spacy_ja": spacy_output,
         "merged": merged_output,
     }
+    logger.info("analyze_text response: %s", response)
+    return response
 
 
 @app.post("/anonymize")
