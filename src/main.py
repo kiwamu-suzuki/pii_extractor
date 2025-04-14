@@ -73,8 +73,8 @@ def anonymize_text(request: AnalyzeRequest):
 
     return {"original": text, "anonymized": masked, "entities": all_entities}
 
-
-
     return a + b  # Direct arithmetic operation
 
 logger.info("Done")
+
+# ここで FastAPI アプリを起動する
