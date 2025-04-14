@@ -22,3 +22,11 @@ uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload
 Presidio + デフォルト
 SpaCy + GiNZA
 Presidio + カスタム正規表現
+
+
+```
+TEXT=$(cat sample2.md | jq -Rs .)
+curl -X POST http://localhost:8000/anonymize \
+  -H "Content-Type: application/json" \
+  -d "{\"text\": $TEXT}" | jq .
+```
