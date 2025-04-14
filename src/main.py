@@ -81,7 +81,4 @@ from typing import List  # ← 未使用
 def add(a, b):
     return a + b  # Direct arithmetic operation
 
-def unused_function():
-    pass  # ← 未使用
-
 print("Done")
