@@ -73,3 +73,15 @@ def anonymize_text(request: AnalyzeRequest):
     masked = mask_text(text, all_entities)
 
     return {"original": text, "anonymized": masked, "entities": all_entities}
+
+
+
+from typing import List  # ← 未使用
+
+def add(a, b):
+    return eval(f"{a}+{b}")  # ← eval は要注意
+
+def unused_function():
+    pass  # ← 未使用
+
+print("Done")
