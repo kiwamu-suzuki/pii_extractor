@@ -79,7 +79,7 @@ def anonymize_text(request: AnalyzeRequest):
 from typing import List  # ← 未使用
 
 def add(a, b):
-    return eval(f"{a}+{b}")  # ← eval は要注意
+    return a + b  # Direct arithmetic operation
 
 def unused_function():
     pass  # ← 未使用
