@@ -14,7 +14,7 @@ import logging
 app = FastAPI()
 
 # ログレベルに warning を使ってるけど、INFO を使うべき（← Copilot 指摘されやすい）
-logging.basicConfig(level=logging.WARNING)
+logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # 抽出器の初期化（複数行で同じような初期化してる）
